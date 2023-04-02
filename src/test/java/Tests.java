@@ -34,4 +34,16 @@ public class Tests {
         assertEquals("Negative + Standart",Negative.plus(Standart), Negative);
         assertEquals("Standart + Standart",Standart.plus(Standart), Standart);
     }
+    @Test
+    public void testMultiply() {
+        Rational Positive = new Rational(1,2);
+        Rational Negative = new Rational(1,-2);
+        Rational Standart = new Rational();
+        assertEquals("Positive * Positive",Positive.multiply(Positive), new Rational(1,4));
+        assertEquals("Negative * Positive",Negative.multiply(Positive), new Rational(-1,4));
+        assertEquals("Negative * Negative",Negative.multiply(Negative), new Rational(1,4));
+        assertEquals("Positive * Standart",Positive.multiply(Standart), Standart);
+        assertEquals("Negative * Standart",Negative.multiply(Standart), Standart);
+        assertEquals("Standart * Standart",Standart.multiply(Standart), Standart);
+    }
 }
