@@ -18,4 +18,9 @@ public class Tests {
         assertEquals("minus + minus != plus", new Rational(-1,-5),new Rational(1,5));
         assertEquals("numerator = -0", new Rational(-0,1),new Rational());
     }
+    @Test
+    public void testReduce() {
+        Rational Reduce =new Rational(-15,-20);
+        assertEquals("The fraction is not reduced", Reduce, new Rational(3,4));
+    }
 }
