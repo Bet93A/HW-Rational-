@@ -8,4 +8,8 @@ public class Tests {
         assertEquals("Standard constructor returns wrong numerator", 0, standard.getNumerator());
         assertEquals("Standard constructor returns wrong denominator", 1, standard.getDenominator());
     }
+    @Test(expected = ArithmeticException.class)
+    public void testDenominator0() {
+        new Rational(5, 0);
+    }
 }
