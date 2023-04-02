@@ -12,4 +12,10 @@ public class Tests {
     public void testDenominator0() {
         new Rational(5, 0);
     }
+    @Test
+    public void testSimplifyMinuses() {
+        assertEquals("minus is not in the numerator",new Rational(1,-5),new Rational(-1,5));
+        assertEquals("minus + minus != plus", new Rational(-1,-5),new Rational(1,5));
+        assertEquals("numerator = -0", new Rational(-0,1),new Rational());
+    }
 }
