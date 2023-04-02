@@ -83,4 +83,23 @@ public class Tests {
         Rational Standart = new Rational();
         Positive.divide(Standart);
     }
+
+    @Test
+    public void testLess(){
+        Rational Positive = new Rational(1,2);
+        Rational Negative = new Rational(1,-2);
+        assertTrue("Negative > Positive",Negative.less(Positive));
+        assertFalse("Negative > Positive",Positive.less(Negative));
+    }
+
+    @Test
+    public void testLessOrEqual(){
+        Rational Positive = new Rational(1,2);
+        Rational Negative = new Rational(1,-2);
+        Rational Standart = new Rational();
+        assertTrue("Positive != Positive",Positive.lessOrEqual(Positive));
+        assertFalse("Negative = Positive",Positive.lessOrEqual(Negative));
+        assertTrue("Negative != Negative",Negative.lessOrEqual(Negative));
+        assertTrue("Standart != Standart",Standart.lessOrEqual(Standart));
+    }
 }
