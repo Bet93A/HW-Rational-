@@ -57,5 +57,10 @@ public class Tests {
         assertEquals("Positive / Negative",Positive.divide(Negative), new Rational(-2,1));
         assertEquals("Standart / Positve",Standart.divide(Positive), Standart);
     }
-
+    @Test(expected = ArithmeticException.class)
+    public void testDivideNegative() {
+        Rational Positive = new Rational(2,3);
+        Rational Standart = new Rational();
+        Positive.divide(Standart);
+    }
 }
