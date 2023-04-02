@@ -46,4 +46,16 @@ public class Tests {
         assertEquals("Negative * Standart",Negative.multiply(Standart), Standart);
         assertEquals("Standart * Standart",Standart.multiply(Standart), Standart);
     }
+    @Test
+    public void testDividePositive() {
+        Rational Positive = new Rational(2,3);
+        Rational Negative = new Rational(1,-3);
+        Rational Standart = new Rational();
+        assertEquals("Positive / Positive",Positive.divide(Positive), new Rational(1,1));
+        assertEquals("Negative / Positive",Negative.divide(Positive), new Rational(-1,2));
+        assertEquals("Negative / Negative",Negative.divide(Negative), new Rational(1,1));
+        assertEquals("Positive / Negative",Positive.divide(Negative), new Rational(-2,1));
+        assertEquals("Standart / Positve",Standart.divide(Positive), Standart);
+    }
+
 }
