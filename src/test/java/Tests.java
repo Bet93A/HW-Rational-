@@ -23,4 +23,15 @@ public class Tests {
         Rational Reduce =new Rational(-15,-20);
         assertEquals("The fraction is not reduced", Reduce, new Rational(3,4));
     }
+    @Test
+    public void testPlus() {
+        Rational Positive = new Rational(1,2);
+        Rational Negative = new Rational(1,-2);
+        Rational Standart = new Rational();
+        assertEquals("Positive + Positive",Positive.plus(Positive), new Rational(1,1));
+        assertEquals("Negative + Positive",Negative.plus(Positive), Standart);
+        assertEquals("Negative + Negative",Negative.plus(Negative), new Rational(-1,1));
+        assertEquals("Negative + Standart",Negative.plus(Standart), Negative);
+        assertEquals("Standart + Standart",Standart.plus(Standart), Standart);
+    }
 }
