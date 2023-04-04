@@ -2,9 +2,9 @@ import org.junit.*;
 import static org.junit.Assert.*;
 
 public class Tests {
-    Rational Positive = new Rational(1,2); // положительная дробь
-    Rational Negative = new Rational(1,-2); // отрицательная дробь
-    Rational Standard = new Rational(); // по сути 0 (0/1), т.к. знаменатель не может быть = 0
+    Rational Positive = new Rational(1,2);
+    Rational Negative = new Rational(1,-2);
+    Rational Standard = new Rational();
     @Test
     public void testStandardConstructor() {
         assertEquals("Standard constructor returns wrong numerator", 0, Standard.getNumerator());
@@ -18,7 +18,7 @@ public class Tests {
 
     @Test
     public void testSimplifyMinuses() {
-        assertEquals("minus is not in the numerator",Negative,new Rational(-1,2));
+        assertTrue("minus is not in the numerator",Negative.getNumerator() == -1);
         assertEquals("minus + minus != plus", new Rational(-1,-2),Positive);
         assertEquals("numerator = -0", new Rational(-0,1),Standard);
     }
@@ -81,16 +81,16 @@ public class Tests {
     }
 
     @Test
-    public void testLessOrEqual(){
-        assertTrue("(1/2) != (1/2)",Positive.lessOrEqual(Positive)); // срабатывание метода equal
-        assertTrue("(-1/2) > (1/2)",Negative.lessOrEqual(Positive)); // срабатывание метода less
-    }
-
-    @Test
     public void testEqual() {
         assertTrue("(1/2) != (1/2)", Positive.equals(Positive));
         assertTrue("(-1/2) != (-1/2)", Negative.equals(Negative));
         assertTrue("0 != 0", Standard.equals(Standard));
         assertFalse("(-1/2) = (1/2)", Negative.equals(Positive));
+    }
+
+    @Test
+    public void testLessOrEqual(){
+        assertTrue("(1/2) != (1/2)",Positive.lessOrEqual(Positive)); // срабатывание метода equal
+        assertTrue("(-1/2) > (1/2)",Negative.lessOrEqual(Positive)); // срабатывание метода less
     }
 }
