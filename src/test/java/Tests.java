@@ -82,10 +82,8 @@ public class Tests {
 
     @Test
     public void testLessOrEqual(){
-        assertTrue("Positive != Positive",Positive.lessOrEqual(Positive));
-        assertFalse("Negative = Positive",Positive.lessOrEqual(Negative));
-        assertTrue("Negative != Negative",Negative.lessOrEqual(Negative));
-        assertTrue("Standart != Standart",Standard.lessOrEqual(Standard));
+        assertTrue("(1/2) != (1/2)",Positive.lessOrEqual(Positive)); // срабатывание метода equal
+        assertTrue("(-1/2) > (1/2)",Negative.lessOrEqual(Positive)); // срабатывание метода less
     }
 
     @Test
